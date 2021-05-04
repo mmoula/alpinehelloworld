@@ -4,7 +4,7 @@ pipeline {
        IMAGE_TAG = "latest"
        STAGING = "marwa-staging"
        PRODUCTION = "marwa-production"
-       IMAGE_REPO = "marwa"
+       IMAGE_REPO = "mmoula"
      }
      agent none
      stages {

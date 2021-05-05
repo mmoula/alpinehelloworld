@@ -1,0 +1,20 @@
+---
+- name: "Deploy application"
+  become: yes
+  hosts: prod
+  tasks:
+    - name: "Install git"
+      yum:
+        name: git
+        state: present
+        update_cache: yes
+    - name: "Removing directory"
+      file:
+        path: /usr/share/nginx/html
+        state: absent
+    - name: "Clone static website"
+      git:
+        repo: "https://github.com/diranetafen/static-website-example.git"
+        dest: "/usr/share/nginx/html"
+        
+...
